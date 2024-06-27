@@ -413,4 +413,15 @@ return [
         'path' => '/code-editor/codecompletion/load-templates',
         'target' => \TYPO3\CMS\Backend\Controller\CodeEditor\CodeCompletionController::class . '::loadCompletions',
     ],
+
+    'select_group_users_data' => [
+        'path' => '/record/userGroup/users/fetch',
+        'target' => Controller\FormSelectGroupUsersAjaxController::class . '::fetchUsersAction',
+    ],
+
+    'select_group_users_remove_user' => [
+        'path' => '/record/userGroup/users/remove',
+        'methods' => ['DELETE'],
+        'target' => Controller\FormSelectGroupUsersAjaxController::class . '::removeUserAction',
+    ],
 ];

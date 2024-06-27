@@ -89,6 +89,7 @@ class NodeFactory
         'selectTree' => Element\SelectTreeElement::class,
         'selectSingle' => Element\SelectSingleElement::class,
         'selectSingleBox' => Element\SelectSingleBoxElement::class,
+        'selectGroupUsers' => Element\SelectGroupUsersElement::class,
         'color' => Element\ColorElement::class,
         'codeEditor' => Element\CodeEditorElement::class,
         'text' => Element\TextElement::class,

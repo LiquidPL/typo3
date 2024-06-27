@@ -159,6 +159,12 @@
 			<trans-unit id="backendUserGroup" resname="backendUserGroup">
 				<source>User group</source>
 			</trans-unit>
+			<trans-unit id="backendUserGroup.addUser" resname="backendUserGroup.addUser">
+				<source>Add user</source>
+			</trans-unit>
+			<trans-unit id="backendUserGroup.removeUser" resname="backendUserGroup.removeUser">
+				<source>Remove from group</source>
+			</trans-unit>
 			<trans-unit id="backendUserGroups" resname="backendUserGroups">
 				<source>Member of groups</source>
 			</trans-unit>
@@ -308,6 +314,9 @@
 			</trans-unit>
 			<trans-unit id="pagination.page" resname="pagination.page">
 				<source>Page</source>
+			</trans-unit>
+			<trans-unit id="pagination.of" resname="pagination.of">
+				<source>of</source>
 			</trans-unit>
 			<trans-unit id="pagination.refresh" resname="pagination.refresh">
 				<source>Refresh</source>

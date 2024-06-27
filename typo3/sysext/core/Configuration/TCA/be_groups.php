@@ -24,6 +24,13 @@ return [
         'searchFields' => 'title',
     ],
     'columns' => [
+        'users' => [
+            'label' => 'users',
+            'config' => [
+                'type' => 'selectGroupUsers',
+                'itemsPerPage' => 5,
+            ],
+        ],
         'title' => [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:be_groups.title',
             'config' => [
@@ -264,7 +271,7 @@ return [
     'types' => [
         '0' => ['showitem' => '
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-                title, subgroup,
+                title, subgroup, users,
             --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:be_groups.tabs.record_permissions,
                 pagetypes_select, --palette--;;tableRestrictions, non_exclude_fields, explicit_allowdeny, allowed_languages,
             --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:be_groups.tabs.module_permissions,

@@ -662,6 +662,11 @@ return [
                             \TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectItems::class,
                         ],
                     ],
+                    \TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectGroupUsers::class => [
+                        'depends' => [
+                            \TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectItems::class,
+                        ],
+                    ],
                     \TYPO3\CMS\Backend\Form\FormDataProvider\TcaCategory::class => [
                         'depends' => [
                             \TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectTreeItems::class,
@@ -825,6 +830,67 @@ return [
                     \TYPO3\CMS\Backend\Form\FormDataProvider\TcaCategory::class => [
                         'depends' => [
                             \TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectTreeItems::class,
+                        ],
+                    ],
+                ],
+                'tcaSelectGroupUsersAjaxFieldData' => [
+                    \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseEditRow::class => [],
+                    \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseParentPageRow::class => [
+                        'depends' => [
+                            \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseEditRow::class,
+                        ],
+                    ],
+                    \TYPO3\CMS\Backend\Form\FormDataProvider\InitializeProcessedTca::class => [
+                        'depends' => [
+                            \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseParentPageRow::class,
+                        ],
+                    ],
+                    \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseUserPermissionCheck::class => [
+                        'depends' => [
+                            \TYPO3\CMS\Backend\Form\FormDataProvider\InitializeProcessedTca::class,
+                        ],
+                    ],
+                    \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseEffectivePid::class => [
+                        'depends' => [
+                            \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseParentPageRow::class,
+                            \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseUserPermissionCheck::class,
+                        ],
+                    ],
+                    \TYPO3\CMS\Backend\Form\FormDataProvider\DatabasePageRootline::class => [
+                        'depends' => [
+                            \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseEffectivePid::class,
+                        ],
+                    ],
+                    \TYPO3\CMS\Backend\Form\FormDataProvider\UserTsConfig::class => [
+                        'depends' => [
+                            \TYPO3\CMS\Backend\Form\FormDataProvider\DatabasePageRootline::class,
+                        ],
+                    ],
+                    \TYPO3\CMS\Backend\Form\FormDataProvider\PageTsConfig::class => [
+                        'depends' => [
+                            \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseEffectivePid::class,
+                            \TYPO3\CMS\Backend\Form\FormDataProvider\UserTsConfig::class,
+                        ],
+                    ],
+                    \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseRowDefaultValues::class => [
+                        'depends' => [
+                            \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseRowInitializeNew::class,
+                            \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseUniqueUidNewRow::class,
+                        ],
+                    ],
+                    \TYPO3\CMS\Backend\Form\FormDataProvider\PageTsConfigMerged::class => [
+                        'depends' => [
+                            \TYPO3\CMS\Backend\Form\FormDataProvider\PageTsConfig::class,
+                        ],
+                    ],
+                    \TYPO3\CMS\Backend\Form\FormDataProvider\TcaColumnsOverrides::class => [
+                        'depends' => [
+                            \TYPO3\CMS\Backend\Form\FormDataProvider\PageTsConfigMerged::class,
+                        ],
+                    ],
+                    \TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectGroupUsers::class => [
+                        'depends' => [
+                            \TYPO3\CMS\Backend\Form\FormDataProvider\InitializeProcessedTca::class,
                         ],
                     ],
                 ],
